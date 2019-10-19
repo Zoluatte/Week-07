@@ -296,10 +296,12 @@ class Student
 ```
 
 * จงอธิบายการทำงานของโปรแกรมด้านบน ว่าเกิดอะไรขึ้น เพราะอะไร
+เนื่องจากว่ามีการกำหนด constructer โดยมีการกำหนดให้มี
 
 ```text
 
-เนื่องจากว่ามีการกำหนด constructer โดยมีการกำหนดให้มี
+เนื่องจากมีการกำหนด fields เป็น private และมีการสร้าง constructer ใน class ทำให้เราสามารถผ่านค่าทางบรรทัดที่สร้าง object ได้เลยโดยไม่ต้องส้ราง properties เพื่อรับค่ามีเพียง GPA อย่างเดียวเท่านั้นที่สร้าง propertis เพื่อรับค่า
+ในส่วนของ class เมื่อมี properties Name, ID ที่ให้ค่ากลับไปได้เลยเนื่องจากรับค่ามาจาก constucter แล้ว ส่วน GPA มีกาสร้าง setter มาเพื่อให้สามารถกำหนดค่าได้ก่อน จากนั้นจึงมี getter ที่ให้สามารถนำค่ากลับไปได้
 
 ```
 
@@ -307,7 +309,7 @@ class Student
 
 ```text
 
-
+Error เนื่องจาก Properties Name ไม่ได้มีสร้าง setter ไว้
 
 ```
 
@@ -319,8 +321,7 @@ class Student
 
 ```text
 
-
-
+costructer จะเริ่มทำงานเมื่อมีการสร้าง object ขึ้น และเมื่อเรามสร้าง fields ที่เป็น private ไว้จะไม่สามารถกำหนดค่าให้กับ attibute ได้ ต้องสร้าง setter ขึ้นมาภายใน class เพื่อกำหนดค่า หรือกำหนดใน constructer ได้เลยผ่านการสร้าง object ใน method Main
 
 ```
 
@@ -329,6 +330,43 @@ class Student
 นักศึกษาที่เรียนในชั้นปีที่ 3 ของภาควิชาครุศาสตร์วิศวกรรม จะต้องออกฝึกงานในสถานประกอบการด้านอุตสาหกรรม นักศึกษาจะได้รับเงินเดือนในการทำงาน ตามค่าแรงขั้นต่ำ (ปัจจุบัน คือ 300 บาท) แต่ไม่เกิน 450 บาทต่อวัน
 
 ให้เขียนคลาส TraineeStudent ที่มี field ชื่อ StudentID และ salary โดยทั้งคู่จะถูกกำหนดค่าผ่าน constructor แต่จะมีเมธอดที่ชื่อ getSalary() และ getStudentID() ไว้อ่านค่าตัวแปร field ทั้งสอง
+
+```csharp
+using System;
+
+class Program{
+    public void Main()
+    {
+        TrineeStudent TS = new Trineestudent(61030000, 15000);
+
+        Console.WriteLine("StudentID : {0}", getStudentID());
+        Console.WriteLine("Salary    : {0}", getSaraly());
+
+        Console.ReadKey();
+    }
+}
+
+class Traineestudent {
+    private int StudentID;
+    private int salary;
+
+    public TraineeStudent(int StudentId, int Salary)
+    {
+        this.StudentID = StudentId;
+        this.salary = Salary;
+    }
+
+    public int getSalary{
+        get{ return salary; }
+    }
+
+    public int getStudentID{
+        get{ return StudentID; }
+    }
+}
+```
+
+![exercise](./images/4.คำถาม.PNG)
 
 ## การทดลองเรื่องการสืบทอดคุณสมบัติ (Inheritance)
 
@@ -382,12 +420,7 @@ static void Main(string[] args)
 
 * รันและสังเกตผลการทำงานของโปรแกรม มีสิ่งใดผิดปกติหรือไม่ อย่างไร
 
-```text
-
-
-
-
-```
+![try](./images/การทดลอง.PNG)]
 
 
 * อธิบายการทำงาน ตามที่เข้าใจ
@@ -395,7 +428,7 @@ static void Main(string[] args)
 
 ```text
 
-
+บรรทัดสร้าง object โปรแกรมได้กำหนดค่าผ่าน constructer เข้าไปใน class Teacher ซึ่งนำค่านั้นไปใช้ในคลาส และมีการเรียกใช้ method ที่อยู่ใน class โดยผ่านค่าเข้าไปใน method และ return ค่ากลับมาแสดง
 
 
 ```
@@ -438,6 +471,7 @@ class Professor : Teacher
 ```csharp
 public Professor(string name, float billingRate): base(name, billingRate)
 ```
+
 หมายความว่า constructor ตัวนี้รับพารามิเตอร์ในขณะสร้างวัตถุเป็นจำนวน 2 พารามิเตอร์ แต่เนื่องจากตัวแปรทั้งสองที่จะนำค่าไปเก็บ มี accessor เป็น private และ protected จึงต้องส่งต่อให้ constructor ของ base class ช่วยดำเนินการเก็บลงใน fields ซึ่งวิธีการดังกล่าวทำได้โดยใช้คำสั่ง : base(name, billingRate) ถ้าหากเราไม่เขียน constructor ตัวนี้ ก็จะไม่สามารถนำค่าไปเก็บใน fields ทั้งสองได้ และค่าใน fields ทั้งสองจะมีค่าเป็น default value ส่วน constructor ตัวที่สองจะรับพารามิเตอร์ในขณะสร้างวัตถุเป็นจำนวน 3 พารามิเตอร์ โดยพารามิเตอร์ที่เพิ่มเข้ามาคือเงินประจำตำแหน่ง (float emolument) 
 
 ```csharp
@@ -466,20 +500,16 @@ static void Main(string[] args)
 ```
 
 * รันและสังเกตผลการทำงานของโปรแกรม มีสิ่งใดผิดปกติหรือไม่ อย่างไร
- 
-```text
 
-
-
-
-```
+![try](./images/การทดลอง2.PNG)
 
 * อธิบายการทำงาน ตามที่เข้าใจ
 
 ```text
 
+ในการสร้าของ teacher มีการค่าเข้าไปที่ constructer แล้วใช้ method จาก classteacher จากนั้นรีเทิร์นค่ากลับมาจาก method 
 
-
+มยการทำงานของ class Professor นั้นเนื่องจาก class teacher มีการกำหนด filds is private and protec จึงต้องสร้าง constructer มา 2 ตัวในตัวแรกจะให้เอาค่าไปเก็บใน base ส่วนตัวที่ 2 คือการเรียกใช้จากใน base จากนั้นก็เรียกใช้ method แล้วรีเทิร์นค่ากลับมา
 
 ```
 
@@ -529,23 +559,17 @@ class Program
 
 * รันและสังเกตผลการทำงานของโปรแกรม มีสิ่งใดผิดปกติหรือไม่ อย่างไร
 
-```text
-
-
-
-
-```
+![polymorpism](./images/Methodoverloading.PNG)
 
 * อธิบายการทำงาน ตามที่เข้าใจ
 
 ```text
 
-
-
+เป็นการเขียนที่เอาไว้ป้องกันการป้อนข้อมูลที่หลากหลายชนิดซึ่ง เมื่อเราป้อนที่เป็น interger ตัวคลาส p ก็จะไปเรียกใช้ mthod ที่สามารถผ่านค่าตัวแปลที่เป็น integer ได้ หรือถ้าเป็นตัวแปรชนิดอื่น ถ้าป้อนเข้ามาแล้วใน method print มีการเขียนรองรับไว้ก็สามารถโชว์ค่าได้โดยไปม่ error
 
 ```
 
-### 1.2 Operator overloading 
+### 1.2 Operator overloading
 
 ในกรณี operator overloading นี้จะช่วยให้เราสามารถใช้งานวัตถุได้อย่างเป็นธรรมชาติมากขึ้น เช่นการบวกเวคเตอร์ 2 ตัวเข้าด้วยกันโดยตัวดำเนินการบวก หรือการกำหนดค่าลบให้กับเวคเตอร์ด้วยตัวกระทำลบแบบ unary ให้เขียนโปรแกรมต่อไปนี้ พร้อมทั้งรันและบันทึกผลการทำงานของโปรแกรม
 
@@ -592,19 +616,13 @@ class Vector
 
 * รันและสังเกตผลการทำงานของโปรแกรม มีสิ่งใดผิดปกติหรือไม่ อย่างไร
 
-```text
-
-
-
-
-```
+![operatorOverloading](./images/Operatoroverloading.PNG)
 
 * อธิบายการทำงาน ตามที่เข้าใจ
 
 ```text
 
-
-
+ภายในคลาส Vector มีการทำ overload ตัวดำเนินการบวก + สำหรับบวกค่าของสอง Vector ออบเจ็ค v1 กับ v2 เข้าด้วยกันที่เป็นพารามิเตอร์ และส่งค่ากลับเป็น Vector ใหม่ที่มีการรวม Vector แล้ว และสำหรับตัวดำเนินการลบ - เช่นกัน เป็นการหักล้างสอง Vector และได้ผลลัพธ์เป็นผลต่างระหว่าง Vector v1
 
 ```
 
@@ -667,20 +685,18 @@ static void Main(string[] args)
 
 * รันและสังเกตผลการทำงานของโปรแกรม มีสิ่งใดผิดปกติหรือไม่ อย่างไร
 
-
-```text
-
-
-
-
-```
+![dynamic](./images/dynamicpolymorphism.PNG)
 
 * อธิบายการทำงาน ตามที่เข้าใจ
 
 ```text
 
-
-
+ในโปรแกรมมีการสืบทอดคลาสจาก person ไป student และ person ไป teacher 
+ในออปเจ็ค p เป็นการสร้างออปเจคมาโดยใช้ class Person
+ในออปเจ็ค s เป็นการสร้างออปเจคมาโดยใช้ class Student
+ในออปเจ็ค sp เป็นการสร้างออปเจคมาโดยใช้ class Stuent ผ่าน Person
+ในออปเจ็ค t เป็นการสร้างออปเจคมาโดยใช้ class Teacher
+ในออปเจ็ค tp เป็นการสร้างออปเจคมาโดยใช้ class Teacher ผ่าน Person
 
 ```
 
@@ -688,8 +704,8 @@ static void Main(string[] args)
 
 ```text
 
-
-
+method overriding คือการทำเขียน method ซ้ำของเดิมที่มีอยู่จากคลาสหลัก
+method hinding คือการซ่อน method จากคลาสหลักแล้วทำงานใน method ที่สร้างมาใหม่
 
 ```
 
@@ -712,6 +728,8 @@ static void Main(string[] args)
 }
 ```
 
+![exercise](./images/exercise1.PNG)
+
 ### ข้อ 2.
 
 ```csharp
@@ -723,6 +741,12 @@ static void Main(string[] args)
 }
 ```
 
+```text
+
+Error เนื่องจาก class Professor นั้นไม่ได้เป็น class ลูกของ Student
+
+```
+
 ### ข้อ 3.
 
 ```csharp
@@ -732,4 +756,10 @@ static void Main(string[] args)
     t.SayHi();
     Console.ReadKey();
 }
+```
+
+```text
+
+Error เนื่องจาก class Person นั้นไม่ได้เป็น class ลูกของ teacher
+
 ```
