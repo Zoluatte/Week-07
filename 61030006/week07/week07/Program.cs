@@ -11,12 +11,19 @@ namespace week07
         static void Main(string[] args)
         {
             Student su = new Student();
-            su.Name = "Student Name";
-            su.ID = "12345678";
-            su.GPA = 7.5f;
-            Console.WriteLine("Student name : " + su.Name);
-            Console.WriteLine("Student ID   : " + su.ID);
-            Console.WriteLine("Student GPA  : " + su.GPA);
+            try
+            {
+                su.Name = "Student Name";
+                su.ID = "12345678";
+                su.GPA = 7.5f;
+                Console.WriteLine("Student name : " + su.Name);
+                Console.WriteLine("Student ID   : " + su.ID);
+                Console.WriteLine("Student GPA  : " + su.GPA);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
     }
@@ -37,9 +44,17 @@ namespace week07
         }
         public float GPA
         {
-            get { return gpa; }
-            set { gpa = value; }
+            get
+            {
+                return gpa;
+            }
+            set
+            {
+                if (value > 0.0 && value <= 4.0)
+                    gpa = value;
+                else
+                    throw (new Exception("Error!!!! invalid GPA"));
+            }
         }
     }
 }
-
