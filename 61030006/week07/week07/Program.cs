@@ -7,19 +7,32 @@ using System.Threading.Tasks;
 namespace week07
 {
     class Program
-    {
-        static void Main(string[] args)
         {
+            void print(int i)
+            {
+                Console.WriteLine("Printing int: {0}", i);
+            }
 
-            Teacher teacher = new Teacher("Tom", 350f);
-            // teacher work for 20Hr/month
-            Console.WriteLine("{0} charge = {1}", teacher.TypeName(),
-                teacher.CalculateCharge(20f));
-            Console.ReadLine();
+            void print(double f)
+            {
+                Console.WriteLine("Printing float: {0}", f);
+            }
 
+            void print(string s)
+            {
+                Console.WriteLine("Printing string: {0}", s);
+            }
 
-
+            static void Main(string[] args)
+            {
+                Program p = new Program();
+                p.print(5);
+                p.print((5.26f).ToString());
+                p.print(264.2871);
+                p.print((int)1354.23);
+                p.print("Hello World of C#");
+                Console.ReadKey();
+            }
         }
     }
     
-}
