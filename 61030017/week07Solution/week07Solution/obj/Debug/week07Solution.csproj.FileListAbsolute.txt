@@ -1,0 +1,6 @@
+C:\Users\Napakorn\Source\Repos\Week-07\61030017\week07Solution\week07Solution\bin\Debug\week07Solution.exe.config
+C:\Users\Napakorn\Source\Repos\Week-07\61030017\week07Solution\week07Solution\bin\Debug\week07Solution.exe
+C:\Users\Napakorn\Source\Repos\Week-07\61030017\week07Solution\week07Solution\bin\Debug\week07Solution.pdb
+C:\Users\Napakorn\Source\Repos\Week-07\61030017\week07Solution\week07Solution\obj\Debug\week07Solution.csprojAssemblyReference.cache
+C:\Users\Napakorn\Source\Repos\Week-07\61030017\week07Solution\week07Solution\obj\Debug\week07Solution.exe
+C:\Users\Napakorn\Source\Repos\Week-07\61030017\week07Solution\week07Solution\obj\Debug\week07Solution.pdb
