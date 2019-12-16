@@ -11,9 +11,9 @@ namespace Week_07
         static void Main(string[] args)
         {
             Student su = new Student();
-            su.Name = "Student Name";
-            su.ID = "12345678";
-            su.GPA = 3.5f;
+            su.Name = "Maethaphon Changart";
+            su.ID = "61030045";
+            su.GPA = 2.5f;
             Console.WriteLine("Student name : " + su.Name);
             Console.WriteLine("Student ID   : " + su.ID);
             Console.WriteLine("Student GPA  : " + su.GPA);
