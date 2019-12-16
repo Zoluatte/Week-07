@@ -63,3 +63,24 @@ namespace Week_07
         }
     }
 }
+class Teacher
+{
+    // constructor (for initial private/protected variables)
+    public Teacher(string name, float billingRate)
+    {
+        this.name = name;
+        this.billingRate = billingRate;
+    }
+    // figure out the charge based on teacher's rate
+    public float CalculateCharge(float hours)
+    {
+        return (hours * billingRate);
+    }
+    // return the name of this type
+    public string TypeName()
+    {
+        return ("Teacher");
+    }
+    private string name;
+    protected float billingRate;
+}
