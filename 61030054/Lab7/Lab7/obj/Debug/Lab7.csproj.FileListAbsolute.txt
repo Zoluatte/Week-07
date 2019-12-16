@@ -5,3 +5,9 @@ C:\Users\User\Desktop\computer Laboratorr 1\Week-07\61030054\Lab7\Lab7\obj\Debug
 C:\Users\User\Desktop\computer Laboratorr 1\Week-07\61030054\Lab7\Lab7\obj\Debug\Lab7.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\computer Laboratorr 1\Week-07\61030054\Lab7\Lab7\obj\Debug\Lab7.exe
 C:\Users\User\Desktop\computer Laboratorr 1\Week-07\61030054\Lab7\Lab7\obj\Debug\Lab7.pdb
+C:\Users\asus\Source\Repos\Week-07\61030054\Lab7\Lab7\bin\Debug\Lab7.exe.config
+C:\Users\asus\Source\Repos\Week-07\61030054\Lab7\Lab7\bin\Debug\Lab7.exe
+C:\Users\asus\Source\Repos\Week-07\61030054\Lab7\Lab7\bin\Debug\Lab7.pdb
+C:\Users\asus\Source\Repos\Week-07\61030054\Lab7\Lab7\obj\Debug\Lab7.csprojAssemblyReference.cache
+C:\Users\asus\Source\Repos\Week-07\61030054\Lab7\Lab7\obj\Debug\Lab7.exe
+C:\Users\asus\Source\Repos\Week-07\61030054\Lab7\Lab7\obj\Debug\Lab7.pdb
