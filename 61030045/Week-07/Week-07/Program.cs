@@ -10,6 +10,13 @@ namespace Week_07
     {
         static void Main(string[] args)
         {
+            {
+                Teacher teacher = new Teacher("Tom", 350f);
+                // teacher work for 20Hr/month
+                Console.WriteLine("{0} charge = {1}", teacher.TypeName(),
+                    teacher.CalculateCharge(20f));
+                Console.ReadLine();
+            }
 
             Student su = new Student("Student Name", "12345678");
             try
