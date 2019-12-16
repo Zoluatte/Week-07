@@ -10,10 +10,9 @@ namespace Week_07
     {
         static void Main(string[] args)
         {
-            
-            Person u = new Professor();
-            u.SayHi();
-            
+
+            Teacher t = new Person();
+            t.SayHi();
             Console.ReadKey();
         }
     }
