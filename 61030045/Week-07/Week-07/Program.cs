@@ -11,8 +11,8 @@ namespace Week_07
         static void Main(string[] args)
         {
 
-            Teacher t = new Person();
-            t.SayHi();
+            Student p = new Professor();
+            p.SayHi();
             Console.ReadKey();
         }
     }
