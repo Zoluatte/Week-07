@@ -10,16 +10,10 @@ namespace Week_07
     {
         static void Main(string[] args)
         {
-            Person p = new Person();
-            p.SayHi();
-            Student s = new Student();
-            s.SayHi();
-            Person sp = new Student();
-            sp.SayHi();
-            Teacher t = new Teacher();
-            t.SayHi();
-            Person tp = new Teacher();
-            tp.SayHi();
+            
+            Person u = new Professor();
+            u.SayHi();
+            
             Console.ReadKey();
         }
     }
@@ -66,6 +60,13 @@ class Student : Person
 }
 
 class Teacher : Person
+{
+    public new void SayHi()
+    {
+        Console.WriteLine("Hi I'm a teacher");
+    }
+}
+class Professor : Person
 {
     public new void SayHi()
     {
